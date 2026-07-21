@@ -1,30 +1,27 @@
 # 🥾 Deutschland Hiking Planner
 
-> Your friendly trail companion for planning day hikes across Germany — all reachable with just your **Deutschlandticket**. 🚆🌲
+> I like to touch grass and go hiking sometimes 🚆🌲
 
-Built for **OpenAI Build Week** with **Codex + GPT-5.6**, this is an [Agent Skill](https://developers.openai.com/) that turns any capable coding agent into a thoughtful hiking guide. Tell it your home city, and it finds real, transit-accessible hikes, checks that the trains and buses actually run, and even hands you a **printable offline map + GPX** so you never get lost when the signal drops.
+Built for **OpenAI Build Week** with **Codex + GPT-5.6**, this is an [Agent Skill](https://developers.openai.com/) that turns any Codex into a hiking guide. 
+
+It remember your home city, and it finds real hikes, checks that the trains actually run, and even hands you a **printable offline map** so you never get lost when the signal drops.
 
 ---
 
 ## 🤖 How Codex & GPT-5.6 were used
 
-- 🏗️ **Codex built the skill** — I designed and iterated on `Skill.md` and the `hike_state.py` helper with Codex, turning a plain-language workflow into structured instructions, CLI code, and safety guardrails.
-- 🧠 **GPT-5.6 is the reasoning engine** — at runtime it cross-references trail data, transit timetables, and Deutschlandticket rules, then reasons about eligibility, return margins, and daylight.
-- 🔗 **Agentic tool use** — Codex + GPT-5.6 drive live web research, run the local state script, and generate the offline PDF + GPX, chaining multiple steps from a single request.
-- ⚡ **Nuanced instruction-following** — GPT-5.6 reliably respects rules like "never invent a water source," "flag seasonal service," and "always tell the user to recheck departures."
+- 🏗️ Codex built the skill — I designed Skill.md helper with Codex, using natural language to find hikes.
+- 🧠 GPT-5.6 is the heart and brain — It helps to gather and structure the data
+- 🔗 Agentic tool use — Codex + GPT-5.6 go to web, combine other tools and skills and give me some good results
 
 ---
 
 ## ✨ What it does
 
 - 🏙️ **Remembers your city** — save your starting point once, locally on your machine.
-- 🔎 **Finds real hikes** — discovers trails with verified distance, elevation, and route data.
-- 🎫 **Checks Deutschlandticket coverage** — no ICE/IC surprises; it verifies regional trains & buses actually include you.
+- 🔎 **Finds real hikes** — discovers trails with verified distance and route data.
 - ⏱️ **Plans the round trip** — confirms you can get home after a realistic day on the trail.
-- 🗺️ **Builds an offline kit** — a print-friendly A4 PDF with landmarks, decision points, coordinates, and safety notes, plus the route GPX.
 - 📓 **Keeps a hike log** — records the trails you've completed so it never sends you on the same one twice.
-
-Everything it tells you separates **verified facts** from **assumptions** — so you can trust the plan and always recheck connections before you go.
 
 ---
 
@@ -81,16 +78,6 @@ Your city and hike history live **only on your device** in a local state file. Y
 - Connections change — the planner will **always** tell you to recheck departures shortly before you travel.
 - Seasonal and unverified features (like a summer-only water tap) are clearly labeled and never assumed safe.
 - The offline PDF + GPX are designed so you can navigate **without any app or signal**. 📵
-
----
-
-## 🧰 What's inside
-
-| File                    | Purpose                                                     |
-| ----------------------- | ----------------------------------------------------------- |
-| `Skill.md`              | The full agent skill — workflow, rules, and quality checks. |
-| `scripts/hike_state.py` | Local state helper for your city and hike log.              |
-| `Readme.md`             | You're reading it. 👋                                       |
 
 ---
 
