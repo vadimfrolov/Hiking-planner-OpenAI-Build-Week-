@@ -6,6 +6,15 @@ Built for **OpenAI Build Week** with **Codex + GPT-5.6**, this is an [Agent Skil
 
 ---
 
+## 🤖 How Codex & GPT-5.6 were used
+
+- 🏗️ **Codex built the skill** — I designed and iterated on `Skill.md` and the `hike_state.py` helper with Codex, turning a plain-language workflow into structured instructions, CLI code, and safety guardrails.
+- 🧠 **GPT-5.6 is the reasoning engine** — at runtime it cross-references trail data, transit timetables, and Deutschlandticket rules, then reasons about eligibility, return margins, and daylight.
+- 🔗 **Agentic tool use** — Codex + GPT-5.6 drive live web research, run the local state script, and generate the offline PDF + GPX, chaining multiple steps from a single request.
+- ⚡ **Nuanced instruction-following** — GPT-5.6 reliably respects rules like "never invent a water source," "flag seasonal service," and "always tell the user to recheck departures."
+
+---
+
 ## ✨ What it does
 
 - 🏙️ **Remembers your city** — save your starting point once, locally on your machine.
@@ -77,11 +86,11 @@ Your city and hike history live **only on your device** in a local state file. Y
 
 ## 🧰 What's inside
 
-| File | Purpose |
-| --- | --- |
-| `Skill.md` | The full agent skill — workflow, rules, and quality checks. |
-| `scripts/hike_state.py` | Local state helper for your city and hike log. |
-| `Readme.md` | You're reading it. 👋 |
+| File                    | Purpose                                                     |
+| ----------------------- | ----------------------------------------------------------- |
+| `Skill.md`              | The full agent skill — workflow, rules, and quality checks. |
+| `scripts/hike_state.py` | Local state helper for your city and hike log.              |
+| `Readme.md`             | You're reading it. 👋                                       |
 
 ---
 
